@@ -1,0 +1,34 @@
+#!/bin/sh
+HOOKS_DIR="resolution-hooks.d"
+USER_DIR="$HOME/.local/share/$HOOKS_DIR"
+ETC_DIR="/etc/$HOOKS_DIR"
+SYSTEM_DIR="/usr/share/$HOOKS_DIR"
+USER_HOOKS=
+
+if [ -d $USER_DIR ]; then
+    USER_HOOKS="$(ls --color=never $USER_DIR/*)"
+fi
+
+if [ -d $ETC_DIR ]; then
+    echo "No user hooks were found, using just system hooks."
+    SYSTEM_HOOKS=$(ls --color=never $ETC_DIR/*)
+elif [ -d $SYSTEM_DIR ]; then
+    echo "No user hooks were found, and $ETC_DIR does not exist. Using $SYSTEM_DIR."
+    SYSTEM_HOOKS=$(ls --color=never $SYSTEM_DIR/*)
+elif [ -d $PWD/$HOOKS_DIR ]; then
+    echo "Using hooks from current dir"
+    SYSTEM_HOOKS=$(ls --color=never $PWD/$HOOKS_DIR/*)
+else
+echo $SYSTEM_HOOKS $USER_HOOKS
+    echo "There is no hook installed on system. You should reinstall this package." && exit 
+fi
+
+if [ ! -f /usr/bin/xeventbind ]; then
+    echo "xeventbind binary was not found, please install it first." && exit 1
+fi
+
+echo $SYSTEM_HOOKS $USER_HOOKS
+
+for HOOK in $SYSTEM_HOOKS $USER_HOOKS;
+    do sh -c "$HOOK"
+done

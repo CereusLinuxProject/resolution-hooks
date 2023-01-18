@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Resolution Monitor
+Name[es]=Monitor de Resolución
+Comment=Run custom scripts when screen resolution changes.
+Comment[es]=Ejecutar guiones personalizados cuando la resolución de pantalla cambia.
+Icon=monitor
+Exec=resolution-monitor

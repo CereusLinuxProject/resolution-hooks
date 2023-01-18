@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -f /usr/bin/resolution-hooks ]; then
+    HOOKS=/usr/bin/resolution-hooks
+else
+    HOOKS=$PWD/resolution-hooks
+fi 
+
+xeventbind resolution $HOOKS
