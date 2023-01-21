@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Resolution Hooks
+Comment=Run resolution hooks on startup.
+Icon=monitor
+Exec=resolution-hooks
