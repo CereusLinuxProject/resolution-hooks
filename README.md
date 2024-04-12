@@ -10,11 +10,11 @@ It uses two scripts: <code>resolution-hooks</code> and <code>resolution-monitor<
 - The <code>resolution-hooks.d</code> included in this repository is intended only as a demonstration. Hooks will included as part of other packages, or packaged apart.
 
 ## Installation
-For XBPS distributions, <code>resolution-hooks</code> is available in <a href="https://sourceforge.net/projects/cereus-linux/files/repos/cereus-extra/">cereus-extra</a> repository. If using Cereus Linux LXQt it is already included in ISO. To install it manually, run:
+For XBPS distributions, <code>resolution-hooks</code> is available in <a href="https://sourceforge.net/projects/cereus-linux/files/repos/cereus-extra/">cereus-extra</a> repository. If using Cereus Linux LXQt, it is already included in the live image. To install it manually, run:
 
     # xbps-install -S resolution-hooks
 
-For other distributions, you will need to build <a href=https://github.com/ritave/xeventbind>xeventbind</a> and add it to PATH. Next, you must place your hooks in the correspondant directories. Finally, you should add <code>resolution-monitor</code> to your autostart. There is a desktop file in this repository which helps you on that.
+For other distributions, you will need to build <a href=https://github.com/ritave/xeventbind>xeventbind</a> and add it to your PATH. Next, you must place your hooks in the correspondant directories. Finally, you should add <code>resolution-monitor</code> to your autostart. There is a desktop file in this repository which helps you on that.
 
 ## TO-DO
 [ ] Allow enable/disable hooks without removing them.
