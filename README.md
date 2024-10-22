@@ -1,5 +1,12 @@
 # resolution-hooks
 Run custom scripts when screen resolution changes. 
+
+<a href="https://codeberg.org/cereus-linux/resolution-hooks">
+    <img alt="Get it on Codeberg" src="https://get-it-on.codeberg.org/get-it-on-white-on-black.png" height="60">
+</a>
+
+The source code is mainly hosted on [Codeberg](https://codeberg.org/cereus-linux/resolution-hooks) with a mirror available on [GitHub](https://github.com/CereusLinuxProject/resolution-hooks). **Issues and pull requests should be made in Codeberg**.
+
 It uses two scripts: <code>resolution-hooks</code> and <code>resolution-monitor</code>. The first one groups all detected hooks and runs them one per one, while the second one calls xeventbind.
 
 <code>resolution-hooks</code> supports two types of hooks: user-level and system-level. To create user-level hooks, put them in <code>~/.local/share/resolution-hooks.d/</code> and make them executable. System-level hooks should be included as part of certain packages, like Betterlockscreen. Default directory for system-level hooks is <code>/usr/share/resolution-hooks.d/</code>, if you want to modify them, put them at <code>/etc/resolution-hooks.d/</code> as the first path will be overwritten with updates.
